@@ -1,4 +1,4 @@
-package com.thingple.android.webclient;
+package com.thingple.h5.webclient;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,9 +12,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 
-import com.thingple.android.WebViewManager;
-import com.thingple.android.bridge.AbstractJsBridge;
-import com.thingple.android.bridge.BridgeConfig;
+import com.thingple.h5.WebViewManager;
+import com.thingple.h5.bridge.AbstractJsBridge;
+import com.thingple.h5.bridge.BridgeConfig;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.thingple.android.webclient;
+package com.thingple.h5.webclient;
 
 import android.graphics.Bitmap;
 import android.net.Uri;

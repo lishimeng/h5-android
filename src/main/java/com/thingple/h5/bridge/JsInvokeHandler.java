@@ -1,4 +1,4 @@
-package com.thingple.android.bridge;
+package com.thingple.h5.bridge;
 
 import android.util.Log;
 import android.webkit.WebView;
