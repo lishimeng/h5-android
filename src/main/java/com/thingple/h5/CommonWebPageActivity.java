@@ -1,4 +1,4 @@
-package com.thingple.android;
+package com.thingple.h5;
 
 import android.net.Uri;
 import android.os.Bundle;

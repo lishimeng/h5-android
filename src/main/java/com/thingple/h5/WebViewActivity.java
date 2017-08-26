@@ -1,4 +1,4 @@
-package com.thingple.android;
+package com.thingple.h5;
 
 import android.annotation.SuppressLint;
 import android.net.Uri;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.webkit.WebView;
 
 import com.thingple.eye.BaseActivity;
-import com.thingple.android.webclient.JsBridgeWebChromeClient;
-import com.thingple.android.webclient.JsBridgeWebViewClient;
+import com.thingple.h5.webclient.JsBridgeWebChromeClient;
+import com.thingple.h5.webclient.JsBridgeWebViewClient;
 
 /**
  *

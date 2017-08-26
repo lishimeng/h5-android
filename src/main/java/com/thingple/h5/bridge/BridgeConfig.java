@@ -1,4 +1,4 @@
-package com.thingple.android.bridge;
+package com.thingple.h5.bridge;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
