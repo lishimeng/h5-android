@@ -18,6 +18,8 @@ import android.webkit.WebView;
 
 public class JsBridgeWebChromeClient extends WebChromeClient {
 
+    private static String TAG = JsBridgeWebChromeClient.class.getName();
+
     @Override
     public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
         return super.onJsPrompt(view, url, message, defaultValue, result);
@@ -35,7 +37,7 @@ public class JsBridgeWebChromeClient extends WebChromeClient {
 
     @Override
     public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
-        Log.d(getClass().getName() + "#onConsoleMessage", consoleMessage.message());
+        Log.d(TAG + "#onConsoleMessage", consoleMessage.message());
         return super.onConsoleMessage(consoleMessage);
     }
 
@@ -61,17 +63,17 @@ public class JsBridgeWebChromeClient extends WebChromeClient {
 
     @Override
     public void onProgressChanged(WebView view, int newProgress) {
-        Log.d(getClass().getName() + "#onProgressChanged", "" + newProgress);
+        Log.d(TAG + "#onProgressChanged", "" + newProgress);
     }
 
     @Override
     public void onReceivedIcon(WebView view, Bitmap icon) {
-        Log.d(getClass().getName() + "#onReceivedIcon", "get Icon");
+        Log.d("#onReceivedIcon", "get Icon");
     }
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
-        Log.d(getClass().getName() + "#onReceivedTitle", "get title:" + title);
+        Log.d(TAG + "#onReceivedTitle", "get title:" + title);
     }
 }
 

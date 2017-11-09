@@ -7,6 +7,8 @@ import android.webkit.WebView;
 
 public abstract class CommonWebPageActivity extends WebViewActivity {
 
+    private static String TAG = CommonWebPageActivity.class.getName();
+
     private String url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,7 @@ public abstract class CommonWebPageActivity extends WebViewActivity {
         try {
             uri = Uri.parse(url);
         } catch (Exception e) {
-            Log.e(getClass().getName() + "#url", "uri转换异常", e);
+            Log.e(TAG + "#url", "uri转换异常", e);
         }
         return uri;
     }
