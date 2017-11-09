@@ -30,6 +30,9 @@ public class JsInvokeHandler {
     public void invoke() {
 
         String module = this.module;
+        if (module == null) {
+            module = "window";
+        }
         String functionName = joinFunction();
         String param = joinParam();
         String content = "if (" + module + " && " + functionName + ") {" + functionName + "(" + param + ");}";

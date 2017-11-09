@@ -11,7 +11,6 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-
 import com.thingple.h5.WebViewManager;
 import com.thingple.h5.bridge.AbstractJsBridge;
 import com.thingple.h5.bridge.BridgeConfig;
@@ -32,8 +31,7 @@ public class JsBridgeWebViewClient extends WebViewClient {
     private WebView webView;
 
     private List<AbstractJsBridge> moduleList = new ArrayList<>();
-
-    private Set<Class<? extends AbstractJsBridge>> modules = new HashSet<>();
+    private Set<Class<? extends AbstractJsBridge>> registerdModules = new HashSet<>();
 
     public JsBridgeWebViewClient(Context context, WebView webView) {
         this.context = context;
@@ -55,6 +53,7 @@ public class JsBridgeWebViewClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         Log.d(getClass().getName() + "#onPageFinished", "加载完页面:" + url);
+
     }
 
     @Override
@@ -101,7 +100,7 @@ public class JsBridgeWebViewClient extends WebViewClient {
     }
 
     @SuppressLint("JavascriptInterface")
-    public JsBridgeWebViewClient addBridge(Class<? extends AbstractJsBridge> clazz) {
+    private JsBridgeWebViewClient addBridge(Class<? extends AbstractJsBridge> clazz) {
         BridgeConfig bridgeConfig = clazz.getAnnotation(BridgeConfig.class);
         if (bridgeConfig == null) {
             return this;
@@ -118,11 +117,17 @@ public class JsBridgeWebViewClient extends WebViewClient {
         return this;
     }
 
-    public void enableModules() {
-        Log.d(getClass().getName() + "#addModules", "开始加载module");
-        for (Class<? extends AbstractJsBridge> module : modules) {
-            addBridge(module);
+    public JsBridgeWebViewClient registerBridge(Class<? extends AbstractJsBridge> clazz) {
+        registerdModules.add(clazz);
+        return this;
+    }
+
+    public JsBridgeWebViewClient enableRegisterModules() {
+
+        for (Class<? extends AbstractJsBridge> clazz : registerdModules) {
+            addBridge(clazz);
         }
+        return this;
     }
 
     private void destroyModule(AbstractJsBridge jsBridge) {

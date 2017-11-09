@@ -39,6 +39,7 @@ public abstract class WebViewActivity extends BaseActivity {
     private void initWebView() {
         webViewClient = new JsBridgeWebViewClient(this, webView);
         initWebViewClient(webViewClient);
+        webViewClient.enableRegisterModules();// 加载js模块
         webView.setWebViewClient(webViewClient);
 
         JsBridgeWebChromeClient webChromeClient = new JsBridgeWebChromeClient();
