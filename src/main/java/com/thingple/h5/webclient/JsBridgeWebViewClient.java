@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.nfc.Tag;
 import android.util.Log;
 import android.webkit.HttpAuthHandler;
 import android.webkit.WebResourceError;

@@ -29,7 +29,6 @@ public class JsInvokeHandler {
      */
     public void invoke() {
 
-        String module = this.module;
         if (module == null) {
             module = "window";
         }
