@@ -29,7 +29,9 @@ public abstract class WebViewActivity extends BaseActivity {
         if (webView != null) {
             initWebView();
             Uri url = url();
-            webView.loadUrl(url.toString());
+            if (url != null) {
+                webView.loadUrl(url.toString());
+            }
         }
     }
 
