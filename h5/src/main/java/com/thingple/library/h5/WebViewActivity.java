@@ -54,7 +54,7 @@ public abstract class WebViewActivity extends BaseActivity {
         webView.getSettings().setJavaScriptEnabled(true);// js生效
         webView.setVerticalScrollBarEnabled(false);// 横向滚动条消失
         webView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
-
+		webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         // Cookie
 
     }
