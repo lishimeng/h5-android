@@ -101,8 +101,15 @@ public class JsBridgeWebViewClient extends WebViewClient {
                 view.loadUrl(url);
             }
             return true;
-        } else if (url.startsWith("file://")) {// TODO
-            view.loadUrl(url);
+        } else if (url.startsWith("file:///")) {// TODO
+            if (WebViewManager.shareInstance().comonPage != null) {
+                Intent intent = new Intent();
+                intent.putExtra("url", url);
+                intent.setClass(context, WebViewManager.shareInstance().comonPage);
+                context.startActivity(intent);
+            } else {
+                view.loadUrl(url);
+            }
             return true;
         }
         return false;
